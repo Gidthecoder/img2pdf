@@ -1,0 +1,20 @@
+	p.title {font-size:30pt;}
+	p#selected-files {display:none;white-space: nowrap;overflow:hidden;text-overflow: ellipsis;}
+			
+			label {display: inline-block;font-size:25pt;cursor:pointer;padding: 5px 45px;border-radius:25px;color:white;background-color: #ff9955;}
+			label:hover {background-color: #ff6600;}
+			input[type=file] {display: none;}
+			input[type=submit] {display: none;font-size:16pt;cursor:pointer;padding: 5px 25px;border-radius:25px;color:white;background-color:black;}
+			
+	@media screen and (max-width: 380px) {
+		p.title {font-size: 25pt;}
+	}
+			
+	@media screen and (max-width: 300px) {
+				p.title {font-size: 22pt;}
+				label {font-size: 20pt;}
+	}
+			
+	@media screen and (max-width: 250px) {
+				label {padding: 5px 35px;}
+	}

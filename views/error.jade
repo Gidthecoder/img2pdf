@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    main
+      header
+        h1
+          a(href='/') IMG2PDF
+      article
+        h2= message
+        h3= error.status
+        pre #{error.stack}
+      footer
+        p
+          code copyright &copy; IMG2PDF 2023

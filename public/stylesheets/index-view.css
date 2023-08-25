@@ -1,0 +1,31 @@
+	p a {font-size:20pt;text-decoration: none;color: white;display: inline-block;padding: 5px 20px;margin-bottom:15px;background-color: #ff6600;cursor: pointer;}
+	div {margin:auto;margin-bottom: 15px;padding:10px;display: flex;flex-direction:row;flex-wrap:wrap;width:80%;background-color: rgba(255,255,255,0.9);}
+	div img {width: 200px;height:200px;object-fit: contain;padding: 10px;background-color: #ffe6d5;margin-right:10px;margin-bottom: 10px;cursor:pointer;}
+	p a.download {background-color: black;display:none;}
+	span.loader {display:none;border: 5px solid black;border-top: 5px solid white;border-radius:50%;width: 25px;height: 25px;animation: spin 0.5s linear infinite;}
+	
+	
+	@keyframes spin{
+		0% {transform: rotate(0deg);}
+		100% {transform: rotate(360deg);}
+	}
+	
+	@media screen and (max-width: 620px) {
+		
+		div img {width: 45%;height: 150px;}
+	}
+	
+	@media screen and (max-width: 415px) {
+		p a {font-size: 16pt;}
+		div img {height: 120px;}
+	}
+	
+	@media screen and (max-width: 330px) {
+		p a {font-size: 14pt;}
+		div {width: 100%;}
+		div img {width:100%;margin-right: 0px;margin-bottom: 5px;}
+	}
+	
+	@media screen and (max-width: 260px) {
+		p a {font-size: 13pt;padding: 5px 10px;}
+	}

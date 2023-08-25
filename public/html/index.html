@@ -1,0 +1,73 @@
+<DOCTYPE HTML> 
+<html>
+	<head>
+		<title>IMG-to-PDF Converter</title>
+		<meta charset="UTF-8">
+		<meta name="author" content="Gideon Akinsanmi">
+		<meta name="description" content="Easily convert any set of images to PDF">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<link rel='stylesheet' href='/stylesheets/index.css' />
+	</head>
+	<body>
+	<main>
+		<header>
+			<h1><a href='/'>IMG2PDF</a></h1>
+		</header>
+		<article>
+			<p class='title'>Easily convert your PNG and JPG images to PDF</p>
+			<form method='post' action='/upload' enctype='multipart/form-data'>
+				<input id='file-upload' type='file' name='images' accept='.png, .jpg' multiple hidden/>
+				<p><label for='file-upload'>Select files</label></p>
+				<p id='selected-files'><code> </code> </p>
+				<p><input type='submit' value='upload' /></p>
+			</form>
+		</article>
+		<footer>
+			<p><code>copyright &copy; IMG2PDF 2023</code></p>
+		</footer>
+		<script>
+			let fileUpload = document.getElementById('file-upload');
+			let selectedFiles = document.querySelector('#selected-files code');
+			let submitButton = document.querySelector('input[type=submit]');
+			
+			let filenames = ''
+			fileUpload.onchange = function (){
+				filenames = ''
+				for(let file of this.files){
+					filenames += file.name
+					filenames += ','
+				}
+				selectedFiles.parentElement.style.display = 'block'
+				selectedFiles.textContent = filenames
+				submitButton.style.display = 'inline-block';
+			}
+		</script>
+	</main>
+		<!--<div>
+			<p id=1><img src='./images/a.jpg'/></p>
+			<p id=2><img src='./images/b.png'/></p>
+			<p id=3><img src='./images/c.jpg'/></p>
+			<p id=4><img src='./images/d.jpg'/></p>
+			<p id=5><img src='./images/e.png'/></p>
+		</div>
+		
+		<form action='/upload' enctype='multipart/form-data' method='post'>
+			<input type='file' name='images' accept='.png, .jpeg' multiple />
+			<input type='submit' value='submit files'/>
+		</form>
+		
+		<style>
+			div {width: 90%;border: 1px solid silver;margin:auto;margin-top:30px;padding: 10px;display: flex;flex-direction:row;flex-wrap:wrap;}
+			p {font-size: 25pt;border: 1px solid red;width:200px;height:200px;cursor:move;}
+			img {width: 200px;height:200px;object-fit: contain;}
+		</style>
+		
+		<script type='module'>
+			import Sortable from './javascripts/sortable.core.esm.js';
+			
+			let list = document.querySelector('div');
+			let sort = Sortable.create(list)
+		</script>-->
+	</body>
+</html>

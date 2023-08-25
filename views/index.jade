@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title IMG-to-PDF Converter
+    meta(charset='UTF-8')
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    link(rel='stylesheet' href='/stylesheets/index-view.css')
+    script(type='module' src='/javascripts/sort.js' defer)
+  body
+    main
+      header
+        h1
+          a(href='/') IMG2PDF
+      article
+        p 
+          a(href='/new') New +
+        div
+          each image in images
+           img(src=`/images/${image}` data-name=image width='200' height='200')
+        p
+          a(class='convert')
+            span(class='text') Convert to PDF &rarr;
+            span(class='loader')
+        p
+          a(class='download' download) Download &darr;
+      footer
+        p
+          code copyright &copy; IMG2PDF 2023
